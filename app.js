@@ -4,6 +4,25 @@ const toggleMenu = document.querySelector(".hamburger");
 const container = document.querySelector(".container");
 const navLinks = document.querySelectorAll(".nav__list li a");
 
+//-----------------------preloader---------------------------
+
+// Wait for the svg animted logo to load
+const animatedLogo = document.getElementById("animatedLogo");
+animatedLogo.addEventListener("load", () => {
+    animatedLogo.style.display = "block";
+});
+
+// preloader
+window.addEventListener("load", function () {
+    var preloader = document.getElementById("preloader");
+    this.setTimeout(() => {
+        preloader.style.display = "none";
+        body.style.overflow = "visible";
+    }, 2000);
+});
+
+//--------------------responsive hamburger--------------------
+
 // hamburger clicked
 toggleMenu.addEventListener("click", () => {
     nav.classList.toggle("active");
@@ -25,7 +44,7 @@ navLinks.forEach((link) => {
     });
 });
 
-// Sticky navbar
+//--------------------------------Sticky navbar---------------------------------
 
 let lastScroll = 0;
 
@@ -53,39 +72,142 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//animation on scroll
+//---------------------logo animation-----------------------
 
-const hiddenElements = document.querySelectorAll(".hidden");
+//header entrance animation
 
+const anim = anime.timeline({
+    loop: false,
+    direction: "alternate",
+});
+
+let durationTime = 500;
+
+anim.add({
+    targets: "#animatedLogo path",
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: "easeInOutQuart",
+    duration: 1000,
+});
+
+anim.add({
+    targets: "#animatedLogo #letter",
+    duration: 1000,
+    opacity: 1,
+    easing: "easeInOutQuart",
+})
+    .add(
+        {
+            targets: "nav",
+            translateY: [-25, 0],
+            opacity: [0, 1],
+            easing: "linear",
+            duration: durationTime,
+        },
+        "-=500"
+    )
+    .add(
+        {
+            targets: ".nav__list li",
+            translateY: [-25, 0],
+            opacity: [0, 1],
+            duration: durationTime,
+            easing: "linear",
+            delay: (el, i) => {
+                return 300 + 100 * i;
+            },
+        },
+        "-=250"
+    )
+    .add(
+        {
+            targets: ".header__text-content > *",
+            translateY: [50, 0],
+            opacity: [0, 1],
+            easing: "linear",
+            duration: durationTime,
+            delay: (el, i) => {
+                return 300 + 100 * i;
+            },
+        },
+        "-=150"
+    )
+    .add(
+        {
+            targets: ".header__avatar",
+            opacity: [0, 1],
+            easing: "linear",
+            duration: durationTime,
+        },
+        "-=100"
+    )
+    .add(
+        {
+            targets: ".media-links",
+            translateY: [50, 0],
+            opacity: [0, 1],
+            duration: durationTime,
+            easing: "linear",
+            delay: (el, i) => {
+                return 300 + 100 * i;
+            },
+        },
+        "-=500"
+    )
+    .add(
+        {
+            targets: ".gmail",
+            translateY: [20, 0],
+            opacity: [0, 1],
+            duration: durationTime,
+            easing: "linear",
+        },
+        "-=500"
+    )
+    .add({
+        targets: ".scroll",
+        opacity: [0, 1],
+        easing: "linear",
+        duration: durationTime,
+        delay: (el, i) => {
+            return 300 + 100 * i;
+        },
+    });
+
+// show div when scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        entry.isIntersecting && entry.target.classList.add("show");
+        if (entry.isIntersecting) {
+            anime({
+                targets: entry.target,
+                opacity: "1",
+                duration: 1000,
+                easing: "easeInOutQuad",
+            });
+
+            observer.unobserve(entry.target);
+        }
     });
 });
 
-hiddenElements.forEach((el) => observer.observe(el));
+const items = document.querySelectorAll(".translateUp");
 
-const staggerdElements = document.querySelectorAll(".stag");
-
-const observerTwo = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        entry.isIntersecting && entry.target.classList.add("staggerd");
-    });
+items.forEach((item) => {
+    observer.observe(item);
 });
 
-staggerdElements.forEach((el) => observerTwo.observe(el));
+//------------------control eye with mouse---------------------
 
-//control eye with mouse
+const eyes = document.querySelectorAll(".eye");
+const anchor = document.querySelector(".header__avatar-img");
 
 window.addEventListener("mousemove", (e) => {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    const anchor = document.querySelector(".header__avatar-img");
     const rekt = anchor.getBoundingClientRect();
     const anchorX = rekt.left + rekt.width / 2;
     const anchorY = rekt.top + rekt.height / 2;
     const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
-    const eyes = document.querySelectorAll(".eye");
     eyes.forEach((eye) => {
         eye.style.transform = `rotate(${angleDeg - 45}deg)`;
     });
@@ -98,3 +220,31 @@ function angle(cx, cy, ex, ey) {
     const deg = (rad * 180) / Math.PI;
     return deg;
 }
+
+// reset the eye position if user is inactive for 1 seconds
+
+let userInactivityTimer;
+
+document.addEventListener("mousemove", resetTimer);
+document.addEventListener("keydown", resetTimer);
+
+// Function to reset the user inactivity timer
+function resetTimer() {
+    clearTimeout(userInactivityTimer);
+    userInactivityTimer = setTimeout(handleUserInactive, 1000);
+}
+
+function handleUserInactive() {
+    eyes.forEach((eye) => {
+        eye.classList.add("inactive-eye");
+    });
+}
+
+function handleUserActive() {
+    eyes.forEach((eye) => {
+        eye.classList.remove("inactive-eye");
+    });
+}
+
+document.addEventListener("mousemove", handleUserActive);
+document.addEventListener("keydown", handleUserActive);

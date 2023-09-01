@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
         <link rel="stylesheet" href="css/style.css" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+            integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
         <script defer src="app.js"></script>
         <title>Cauã Thiago - Web Developer</title>
-        <meta name="description" content="I'm Rocky Barua, a front-end web developer based in Bangladesh. I enjoy building beautiful and responsive websites with clean and elegant code. Explore my portfolio and contact me for collaboration.">
-        <meta name="keywords" content="Rocky Barua, web developer, front-end developer, Bangladesh, portfolio, collaboration">
+        <meta
+            name="description"
+            content="Sou Cauã Thiago, desenvolvedor web front-end Sou de Pernanbuco-BRASIL. Gosto de construir sites bonitos e responsivos com código limpo e elegante. Explore meu portfólio e entre em contato comigo para colaboração."
+        />
+        <meta
+            name="keywords"
+            content="Cauã, desenvolvedor web, desenvolvedor front-end, Brasil, portfólio, colaboração"
+        />
     </head>
     <body>
+        <div id="preloader">
+            <svg
+                id="animatedLogo"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+                <g>
+                    <g
+                        id="letter"
+                        transform="translate(34, 33)"
+                        fill="#64FFDA"
+                        style="opacity: 0"
+                        font-family="Inter, sans-serif"
+                        font-size="50"
+                        font-weight="700"
+                        letter-spacing="4.16666603"
+                    >
+                        <text>
+                            <tspan x="0.14" y="32">C</tspan>
+                        </text>
+                    </g>
+                    <path
+                        stroke="#64FFDA"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M 50, 5
+        L 11, 27
+        L 11, 72
+        L 50, 95
+        L 89, 73
+        L 89, 28 z"
+                    />
+                </g>
+            </svg>
+        </div>
         <div class="scroll scroll-left">
-            <span>rolar para baixo</span>
+            <span>scroll down</span>
             <i class="fa-solid fa-arrow-down"></i>
         </div>
         <div class="scroll scroll-right">
-            <span>rolar para baixo</span>
+            <span>scroll down</span>
             <i class="fa-solid fa-arrow-down"></i>
         </div>
         <ul class="media-links">
@@ -41,7 +94,7 @@
             </li>
             <li>
                 <a
-                    href="https://twitter.com/"
+                    href="https://twitter.com/cauathiago_dev"
                     target="_blank"
                     rel="noopener"
                     aria-label="Twitter"
@@ -58,25 +111,26 @@
                 ></a>
             </li>
         </ul>
-        <a class="gmail" href="mailto:cauathiago.dev@gmail.com"
-            >cauathiago.dev@gmail.com</a
+        <a class="gmail" href="mailto:cauathiago.developer@gmail.com"
+            >cauathiago.developer@gmail.com</a
         >
         <a href="#" class="go-top" aria-label="scroll back to top"
             ><i class="fa-brands fa-space-awesome"></i
         ></a>
 
         <nav>
-            <div class="nav__logo">
-                <a href="#">C</a>
-            </div>
+            <a href="#" class="nav__logo">
+                <svg>
+                    <use xlink:href="./images/logo.svg#logo" />
+                </svg>
+            </a>
             <ul class="nav__list">
-
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#work">Trabalho</a></li>
+                <li><a href="#about">Sobre min</a></li>
+                <li><a href="#work">Trabalhos</a></li>
                 <li><a href="#contact">Contato</a></li>
                 <li>
                     <a
-                        href="./resume.pdf"
+                        href=""
                         target="_blank"
                         class="resume"
                         >Resumo</a
@@ -101,7 +155,7 @@
                     <div class="eye-lid right-eye-lid"></div>
                 </div>
                 <div class="header__text-content">
-                    <p class="header__hi">Oi, meu nome é</p>
+                    <p class="header__hi">Hi, my name is</p>
                     <h1>
                         <span class="header__name">Cauã Thiago,</span
                         ><br /><span class="header__bio">Web Developer</span>
@@ -110,7 +164,7 @@
                         Sou um desenvolvedor front-end. Gosto de criar sites bonitos e responsivos com código limpo, eficiente e elegante.
                     </p>
                     <div class="header__links">
-                        <a href="./resume.pdf" target="_blank"
+                        <a href="" target="_blank"
                             >Resumo</a
                         >
                         <a href="#work">Meus Trabalhos</a>
@@ -118,29 +172,37 @@
                 </div>
             </header>
             <div class="about" id="about">
-                <section class="about__myself hidden">
-                    <h2>Sobre mim</h2>
+                <section class="about__myself translateUp">
+                    <h2>Sobre min</h2>
                     <p>
-                        Olá, meu nome é Cauã Thiago! Atualmente estou morando em Recife-PE, sou estudante e desenvolvedor front-end com uma sede insaciável de criar coisas incríveis online.<br><br>Assim que descobri o desenvolvimento web, através do meu padrasto(<a href="https://www.jeftar.com.br/" target="_blank">@Jeftar</a>),Eu sabia que tinha encontrado minha paixão! Com minha curiosidade natural e habilidades de resolução de problemas, aprendi muito e com o tempo construí algumas coisas incríveis!<br><br>Mas o que realmente me entusiasma é a oportunidade de colaborar com pessoas positivas e afins para criar algo verdadeiramente alucinante. Então, você está pronto para unir forças e dar vida às nossas ideias mais malucas? Então vamos!
+                        Olá, meu nome é Cauã Thiago! Atualmente estou morando em Recife-PE, 
+                        sou estudante e desenvolvedor front-end com uma sede insaciável de 
+                        criar coisas incríveis online.<br /><br />Assim que descobri o desenvolvimento web, 
+                        através do meu padrasto(<a href="https://www.jeftar.com.br/" target="_blank">@Jeftar</a>), Eu sabia que tinha encontrado minha paixão! Com minha curiosidade 
+                        natural e habilidades de resolução de problemas, aprendi muito e com o tempo construí algumas coisas 
+                        incríveis!<br /><br />Mas o que realmente me entusiasma, é a oportunidade de colaborar com pessoas positivas
+                         e afins para criar algo verdadeiramente alucinante. Então, você está pronto para unir forças e dar vida às nossas 
+                         ideias mais malucas? Então
+                        <a href="#contact">vamos!</a>
                     </p>
                 </section>
-                <section class="about__skill hidden">
+                <section class="about__skill translateUp">
                     <h2>Coisas que aprendi</h2>
                     <ul class="about__skill-list">
-                        <li class="stag"><i class="fa-brands fa-html5"></i></li>
-                        <li class="stag">
+                        <li><i class="fa-brands fa-html5"></i></li>
+                        <li>
                             <i class="fa-brands fa-css3-alt"></i>
                         </li>
-                        <li class="stag"><i class="fa-brands fa-js"></i></li>
-                        <li class="stag"><i class="fa-brands fa-react"></i></li>
-                        <li class="stag"><i class="fa-brands fa-git"></i></li>
+                        <li><i class="fa-brands fa-js"></i></li>
+                        <li><i class="fa-brands fa-react"></i></li>
+                        <li><i class="fa-brands fa-node"></i></li>
                     </ul>
                 </section>
             </div>
             <div class="work" id="work">
-                <h2 class="hidden">Alguns dos meus trabalhos recentes</h2>
+                <h2 class="translateUp">Alguns dos meus trabalhos recentes</h2>
                 <div class="project-section">
-                    <div class="project hidden">
+                    <div class="project translateUp">
                         <a
                             href="https://cauathiago.github.io/Appvilla"
                             target="_blank"
@@ -185,10 +247,10 @@
                                     aria-label="website link"
                                     ><i class="fa-solid fa-eye"></i
                                 ></a>
-                            </div>
+                            </div> 
                         </section>
                     </div>
-                    <div class="project hidden">
+                    <div class="project translateUp">
                         <a
                             href="https://cauathiago.github.io/todo-app-main"
                             target="_blank"
@@ -236,7 +298,7 @@
                             </div>
                         </section>
                     </div>
-                    <div class="project hidden">
+                    <div class="project translateUp">
                         <a
                             href="https://cauathiago.github.io/url-shortening-api-master"
                             target="_blank"
@@ -267,6 +329,7 @@
                                 <span>Html</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
+                                <span>Shrtcode API</span>
                             </div>
                             <div class="project__text-links">
                                 <a
@@ -288,26 +351,27 @@
                     </div>
                 </div>
                 <a
-                    href="https://github.com/cauathiago"
+                    href="https://github.com/cauathiago?tab=repositories"
                     target="_blank"
                     rel="noopener"
-                    class="work__view-more"
-                    >Veja mais</a>
+                    class="work__view-more translateUp"
+                    >Ver Mais</a
+                >
             </div>
         </main>
         <footer>
-            <section class="contact hidden" id="contact">
+            <section class="contact translateUp" id="contact">
                 <h2>Entrar em contato</h2>
                 <p>
-                    Tem uma proposta ou quer dizer olá? Envie um e-mail. Vou responder o mais rápido que puder!
+                    Tem uma proposta ou quer dizer olá? Envie um e-mail. Responderei o mais rápido que puder.
                 </p>
                 <a
-                    href="mailto:cauathiago.dev@gmail.com"
+                    href="mailto:cauathiago.developer@gmail.com"
                     aria-label="send email"
                     ><i class="fa-solid fa-paper-plane"></i
                 ></a>
             </section>
-            <ul class="footer__links">
+            <ul class="footer__links translateUp">
                 <li>
                     <a
                         href="https://www.frontendmentor.io/profile/cauathiago"
@@ -328,9 +392,17 @@
                 </li>
                 <li>
                     <a
-                        href="https://instagram.com/"
+                        href="https://twitter.com/cauathiago_dev"
                         target="_blank"
                         rel="noopener"
+                        aria-label="Twitter"
+                        ><i class="fa-brands fa-twitter"></i
+                    ></a>
+                </li>
+                <li>
+                    <a 
+                        href="https://instagram.com/cauathiagooficial" 
+                        target="_blank" rel="noopener" 
                         aria-label="instagram"
                         ><i class="fa-brands fa-instagram"></i
                     ></a>
@@ -344,19 +416,10 @@
                         ><i class="fa-brands fa-linkedin-in"></i
                     ></a>
                 </li>
-                <li>
-                    <a
-                        href="https://www.twitter.com"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="twitter"
-                        ><i class="fa-brands fa-twitter"></i
-                    ></a>
-                </li>
             </ul>
             <p class="footer__text">
-                Desenvolvido por <span class="footer__text-heart">Cauã Thiago</span>
-                
+                Coded with <span class="footer__text-heart">❤</span> by
+                <a href="https://github.com/cauathiago">Biplob Cauã Thiago</a>.
             </p>
         </footer>
     </body>

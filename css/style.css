@@ -655,7 +655,7 @@ header h1 {
     border-radius: 5px;
     margin: 0 auto;
     margin-top: 5rem;
-    padding: 1rem 2rem;
+    padding: 0.8rem 4rem;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;

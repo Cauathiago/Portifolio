@@ -773,9 +773,7 @@ footer .contact {
     font-size: 0.8rem;
     text-align: center;
 }
-.footer__text-heart {
-    color: var(--cta);
-}
+
 .footer__text a {
     color: var(--primary-txt);
     text-decoration: none;

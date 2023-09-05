@@ -364,7 +364,7 @@ nav.active .hamburger::after {
 .header__avatar-img {
     width: 100%;
     height: 100%;
-}
+} 
 .header__avatar .eye {
     position: absolute;
     content: "";

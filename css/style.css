@@ -727,7 +727,7 @@ footer .contact {
 }
 .footer__links {
     position: absolute;
-    bottom: 5rem;
+    bottom: 6rem;
     width: 100%;
     list-style-type: none;
     display: -webkit-box;

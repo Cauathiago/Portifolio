@@ -352,8 +352,8 @@ nav.active .hamburger::after {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    gap: 2rem;
-    padding: 1.5rem;
+    gap: 3rem;
+    padding: 2.5rem;
     padding-bottom: 2.5rem;
 }
 .header__avatar {

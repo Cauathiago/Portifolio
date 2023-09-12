@@ -6,7 +6,7 @@ const navLinks = document.querySelectorAll(".nav__list li a");
 
 //-----------------------preloader---------------------------
 
-// Wait for the svg animted logo to load
+// carregamento do logotipo animado SVG
 const animatedLogo = document.getElementById("animatedLogo");
 animatedLogo.addEventListener("load", () => {
     animatedLogo.style.display = "block";
@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
 
 //--------------------responsive hamburger--------------------
 
-// hamburger clicked
+// hamburger
 toggleMenu.addEventListener("click", () => {
     nav.classList.toggle("active");
 
@@ -35,7 +35,7 @@ toggleMenu.addEventListener("click", () => {
         container.style.filter = "none";
     }
 });
-// close nav when a navlink is clicked
+// fechar navegação quando um link de navegação é clicado
 navLinks.forEach((link) => {
     link.addEventListener("click", () => {
         nav.classList.remove("active");
@@ -63,7 +63,7 @@ window.addEventListener("scroll", () => {
     }
     lastScroll = currentScroll;
 
-    // Scroll-back-top button display position
+    // Posição de exibição do botão scroll-back-top
     const goTop = document.querySelector(".go-top");
     if (currentScroll >= 700) {
         goTop.style.transform = "translateY(0)";
@@ -74,7 +74,7 @@ window.addEventListener("scroll", () => {
 
 //---------------------logo animation-----------------------
 
-//header entrance animation
+// Animação de entrada de cabeçalho
 
 const anim = anime.timeline({
     loop: false,
@@ -174,7 +174,7 @@ anim.add({
         },
     });
 
-// show div when scroll
+// Mostrar div ao rolar
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -196,7 +196,7 @@ items.forEach((item) => {
     observer.observe(item);
 });
 
-//------------------control eye with mouse---------------------
+//------------------controlar olho com mouse---------------------
 
 const eyes = document.querySelectorAll(".eye");
 const anchor = document.querySelector(".header__avatar-img");
@@ -221,14 +221,14 @@ function angle(cx, cy, ex, ey) {
     return deg;
 }
 
-// reset the eye position if user is inactive for 1 seconds
+// Redefinir a posição dos olhos se o usuário estiver inativo por 1 segundo
 
 let userInactivityTimer;
 
 document.addEventListener("mousemove", resetTimer);
 document.addEventListener("keydown", resetTimer);
 
-// Function to reset the user inactivity timer
+// Função para zerar o temporizador de inatividade do usuário
 function resetTimer() {
     clearTimeout(userInactivityTimer);
     userInactivityTimer = setTimeout(handleUserInactive, 1000);

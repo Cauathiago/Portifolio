@@ -17,7 +17,7 @@ body {
     background: var(--main-bg);
     font-family: "Inter", sans-serif;
     font-size: 1rem;
-    line-height: 1;
+    line-height: 1.4;
     padding-top: 70px;
     position: relative;
     overflow: hidden;
@@ -933,15 +933,16 @@ footer .contact {
         color: var(--cta);
     }
 
+    /* ------------------------------------- */
+
     .footer__text a{
-        font-family: cursive;
-        text-decoration: revert;
+        color: var(--cta);
+        font-family: inherit;
     }
 
     .footer__text a:hover{
-        color: var(--cta);
-        text-decoration: none;
-    }
+        text-decoration: revert;
+        }
 
     .nav__menu {
         display: none;

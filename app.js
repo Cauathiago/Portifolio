@@ -221,7 +221,7 @@ function angle(cx, cy, ex, ey) {
     return deg;
 }
 
-// Redefinir a posição dos olhos se o usuário estiver inativo por 1 segundo
+// Redefinir a posição dos olhos se o usuário estiver inativo por 5 segundo
 
 let userInactivityTimer;
 
@@ -231,7 +231,7 @@ document.addEventListener("keydown", resetTimer);
 // Função para zerar o temporizador de inatividade do usuário
 function resetTimer() {
     clearTimeout(userInactivityTimer);
-    userInactivityTimer = setTimeout(handleUserInactive, 1000);
+    userInactivityTimer = setTimeout(handleUserInactive, 5000);
 }
 
 function handleUserInactive() {

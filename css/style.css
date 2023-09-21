@@ -1069,7 +1069,7 @@ footer .contact {
         /* background: var(--cta); */
         inset: 0;
         mix-blend-mode: darken;
-        z-index: 0;
+        z-index: 1;
     }
     .project__image:hover::after {
         inset: unset;

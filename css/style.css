@@ -602,7 +602,7 @@ header h1 {
 }
 .project__text-info {
     font-size: 1rem;
-    margin: 1.125rem 0;
+    margin: 1.125rem -20px;
     -webkit-border-radius: 0.3rem;
     -moz-border-radius: 0.3rem;
     -ms-border-radius: 0.3rem;

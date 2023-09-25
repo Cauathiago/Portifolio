@@ -602,7 +602,7 @@ header h1 {
 }
 .project__text-info {
     font-size: 1rem;
-    margin: 1.125rem -20px;
+    margin: 1.125rem 0px;
     -webkit-border-radius: 0.3rem;
     -moz-border-radius: 0.3rem;
     -ms-border-radius: 0.3rem;
@@ -1048,7 +1048,7 @@ footer .contact {
         -ms-flex-align: center;
         align-items: center;
         grid-template-columns: auto auto;
-        gap: 5rem;
+        gap: 3rem;
     }
     .project__text {
         margin-left: -100px;
